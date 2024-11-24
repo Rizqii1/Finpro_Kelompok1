@@ -41,3 +41,61 @@ o	Nilai harga pesanan mengikuti distribusi mendekati normal.
 11.	Pengiriman yang Berhasil Berdasarkan Ukuran: Sebagian besar barang dengan ukuran M, L, XL, XXL, S, dan XS berhasil diterima oleh pembeli tanpa adanya pengembalian atau penolakan.
 12.	Kategori dengan Harga Rata-rata Tinggi: Set, Saree, dan Western Dress memiliki harga rata-rata pesanan tertinggi, kemungkinan menunjukkan preferensi pelanggan atau kualitas produk yang lebih tinggi.
 13.	Wilayah dengan Pesanan Tertinggi: Maharashtra dan Karnataka memiliki jumlah pesanan terbanyak, menunjukkan hotspot permintaan regional.
+
+
+# Data Preprocessing untuk Dataset Penjualan Amazon
+
+Repository ini berisi langkah-langkah preprocessing yang dilakukan pada dataset penjualan Amazon untuk mempersiapkan data sebelum analisis dan pembuatan model.
+
+## Deskripsi Dataset
+Dataset ini mencakup informasi transaksi penjualan di Amazon, dengan kolom seperti Date, Status, Category, Qty, Amount, dan lainnya. Proses preprocessing dilakukan untuk membersihkan, mentransformasi, dan meningkatkan kualitas data.
+
+---
+
+## Langkah-Langkah Preprocessing
+
+### 1. Penanganan Missing Values
+- Menghapus kolom dengan banyak nilai yang hilang, termasuk:
+  - Courier Status, currency, Amount, ship-city, ship-state, ship-postal-code, ship-country, promotion-ids, fulfilled-by, Unnamed: 22.
+  
+### 2. Penyesuaian Tipe Data
+- Mengubah kolom Date menjadi tipe datetime untuk memudahkan manipulasi data.
+- Mengonversi kolom B2B menjadi tipe numerik untuk konsistensi.
+
+### 3. Penghapusan Duplikasi
+- Menghapus baris yang duplikat untuk memastikan data unik.
+
+### 4. Penanganan Outlier
+- Menerapkan transformasi log pada kolom dengan skewness tinggi:
+  - Qty → Qty_log
+  - Amount → Amount_log
+
+### 5. Encoding Fitur
+- *Ordinal Encoding*:
+  - Memetakan nilai Size (contoh: XS, S, M, L, dll.) menjadi level numerik.
+- *One-Hot Encoding*:
+  - Melakukan encoding pada kolom Category dan Region.
+- Memetakan kolom ship-state ke dalam wilayah geografis (contoh: Utara, Selatan, Timur, Barat).
+
+### 6. Penanganan Ketidakseimbangan Kelas
+- Memetakan kolom Status menjadi label numerik:
+  - Shipped - Delivered to Buyer → 3
+  - Shipped - Returned to Seller → 2
+  - Shipped - Rejected by Buyer → 1
+- Menggunakan *SMOTE* (Synthetic Minority Oversampling Technique) untuk menyeimbangkan jumlah kelas pada target.
+
+### 7. Feature Engineering
+- Menambahkan fitur tambahan yang terkait dengan tanggal:
+  - Day (tanggal numerik dalam sebulan).
+  - Day_Type (dikategorikan sebagai "Hari Kerja" atau "Akhir Pekan").
+- Menambahkan indikator biner:
+  - Is_Weekend (1 jika akhir pekan, 0 jika hari kerja).
+
+### 8. Seleksi Fitur
+- Menghapus kolom yang tidak relevan atau redundan setelah preprocessing, termasuk:
+  - index, ship-postal-code, Sales Channel, dan Status.
+
+---
+
+## Hasil Akhir
+Dataset yang sudah dibersihkan dan diproses siap digunakan untuk analisis lebih lanjut dan pembuatan model machine learning. Dataset ini memiliki representasi fitur yang lebih baik dan target kelas yang seimbang.
