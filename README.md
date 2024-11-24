@@ -1,6 +1,6 @@
-Project EDA: Analisis Penjualan E-Commerce
+# Project EDA: Analisis Penjualan E-Commerce
 
-Pendahuluan
+# Pendahuluan
 
 Proyek ini bertujuan untuk mengeksplorasi dan menganalisis data penjualan dari sebuah perusahaan e-commerce dengan menggunakan Analisis Data Eksploratori (EDA). Tujuan utama EDA adalah untuk:
 •	Mendapatkan wawasan awal dan mengidentifikasi pola atau tren dalam data.
@@ -8,7 +8,7 @@ Proyek ini bertujuan untuk mengeksplorasi dan menganalisis data penjualan dari s
 EDA menyediakan dasar bagi rekomendasi bisnis berdasarkan pola dan insight yang teramati.
 
 
-Gambaran Dataset
+# Gambaran Dataset
 
 Dataset ini berisi 128.975 baris data dan beberapa kolom kunci, termasuk:
 •	Order ID: ID unik untuk setiap pesanan.
@@ -24,7 +24,7 @@ Dataset ini berisi 128.975 baris data dan beberapa kolom kunci, termasuk:
 
 
 
-Ringkasan Insight dari EDA
+# Ringkasan Insight dari EDA
 
 1.	Unik Order ID: Dataset mencakup 120.378 Order ID unik, menunjukkan ada beberapa pesanan dengan banyak item atau baris entri.
 2.	Puncak Frekuensi Pesanan: Ada lonjakan frekuensi pesanan yang mencolok di awal Mei 2022.
