@@ -1,4 +1,4 @@
-# Project EDA: Analisis Penjualan E-Commerce
+# Project : Analisis Penjualan E-Commerce
 
 # Pendahuluan
 
