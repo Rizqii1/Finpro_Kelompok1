@@ -71,7 +71,7 @@ Dataset ini mencakup informasi transaksi penjualan di Amazon, dengan kolom seper
 - Menerapkan transformasi log pada kolom dengan skewness tinggi:
   - Qty → Qty_log
   - Amount → Amount_log
-    ![alt text](https://github.com/Rizqii1/Finpro_Kelompok1/blob/main/outlier.png?raw=true)
+  ![alt text](https://github.com/Rizqii1/Finpro_Kelompok1/blob/main/Plot_%20Log.png?raw=true)
 ### 5. Encoding Fitur
 - *Ordinal Encoding*:
   - Memetakan nilai Size (contoh: XS, S, M, L, dll.) menjadi level numerik.
