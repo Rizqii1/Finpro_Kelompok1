@@ -57,6 +57,8 @@ Dataset ini mencakup informasi transaksi penjualan di Amazon, dengan kolom seper
 ### 1. Penanganan Missing Values
 - Menghapus kolom dengan banyak nilai yang hilang, termasuk:
   - Courier Status, currency, Amount, ship-city, ship-state, ship-postal-code, ship-country, promotion-ids, fulfilled-by, Unnamed: 22.
+
+    ![alt text](https://github.com/Rizqii1/Finpro_Kelompok1/blob/main/missing%20value.png?raw=true)
   
 ### 2. Penyesuaian Tipe Data
 - Mengubah kolom Date menjadi tipe datetime untuk memudahkan manipulasi data.
